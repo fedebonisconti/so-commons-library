@@ -35,7 +35,7 @@ char *temporal_get_string_time() {
 		return 0;
 	}
 
-	log_tm = localtime(&log_time);
+	log_tm = localtime_r(&log_time, log_tm);
 
 	if (ftime(&tmili)) {
 		error_show("Error getting time!");
